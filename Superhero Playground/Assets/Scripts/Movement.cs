@@ -5,43 +5,44 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField]
-    private float forwardSpeed;
-
-    [SerializeField]
-    private float sideSpeed;
+    private float playerSpeed;
 
     [SerializeField]
     private float sprintBonus;
 
-    private float activeForwardSpeed;
-    private float activeSideSpeed;
+    private Rigidbody playerBody;
+    private Vector3 inputVector;
 
     // Turn off cursor in-game
-    /*private void Start()
+    private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-    }*/
+        // Get RigidBody component attached to player obj
+        playerBody = GetComponent<Rigidbody>();
+        //Cursor.lockState = CursorLockMode.Locked;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        // Get input speed for each axis
-        activeForwardSpeed = Input.GetAxisRaw("Vertical") * forwardSpeed;
-        activeSideSpeed = Input.GetAxisRaw("Horizontal") * sideSpeed;
+        // Get input values for both axis
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
 
-        // Transform position based on input speed for each axis
-        transform.position += transform.forward * activeForwardSpeed * Time.deltaTime;
-        transform.position += transform.right * activeSideSpeed * Time.deltaTime;
+        // Calculate input vector based on input values
+        inputVector = (transform.right * x) + (transform.forward * z);
+
+        // Calculate movement velocity of player
+        playerBody.velocity = inputVector * playerSpeed;
 
         // Player Sprint - if player presses LeftShift, increase player speed by adding sprint bonus, subtract when key released
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            forwardSpeed += sprintBonus;
+            playerSpeed += sprintBonus;
 
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            forwardSpeed -= sprintBonus;
+            playerSpeed -= sprintBonus;
         }
 
         // Test purposes only - turn cursor back on if player hits escape key
