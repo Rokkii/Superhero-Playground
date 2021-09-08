@@ -7,8 +7,7 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private float playerSpeed;
 
-    [SerializeField]
-    private float sprintBonus;
+    public float sprintBonus;
 
     private Rigidbody playerBody;
     private Vector3 inputVector;
@@ -29,7 +28,7 @@ public class Movement : MonoBehaviour
         float z = Input.GetAxisRaw("Vertical");
 
         // Calculate input vector based on input values
-        inputVector = (transform.right * x) + (transform.forward * z);
+        inputVector = (transform.right * x) +  (transform.forward * z);
 
         // Calculate movement velocity of player
         playerBody.velocity = inputVector * playerSpeed;

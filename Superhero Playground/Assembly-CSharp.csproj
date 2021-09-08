@@ -53,9 +53,10 @@
     <UnityVersion>2020.3.11f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerLook.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\PlayerLook.cs" />
     <Compile Include="Assets\Scripts\Powers\Flight.cs" />
+    <Compile Include="Assets\Scripts\Powers\SuperSpeed.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
