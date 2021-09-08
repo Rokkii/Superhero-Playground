@@ -53,12 +53,13 @@
     <UnityVersion>2020.3.11f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Powers\SlowTime.cs" />
+    <Compile Include="Assets\Scripts\Obstacles\MoveToTarget.cs" />
     <Compile Include="Assets\Scripts\Player Controls\Movement.cs" />
     <Compile Include="Assets\Scripts\Player Controls\PlayerLook.cs" />
     <Compile Include="Assets\Scripts\Powers\SuperSpeed.cs" />
     <Compile Include="Assets\Scripts\Powers\Flight.cs" />
-    <Compile Include="Assets\Scripts\MoveToTarget.cs" />
-    <Compile Include="Assets\Scripts\Powers\SlowTime.cs" />
+    <Compile Include="Assets\Scripts\Powers\Teleportation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

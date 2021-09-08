@@ -5,15 +5,19 @@ using UnityEngine;
 public class Flight : MonoBehaviour
 {
     [SerializeField]
-    private float flightSpeed;
+    private float flightSpeed = 10f;
 
     private float activeFlightSpeed;
     private float flightAcceleration = 2f;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        Debug.Log("Flight activated...");
+    }
+
+    private void OnDisable()
+    {
+        Debug.Log("Flight deactivated...");
     }
 
     // Update is called once per frame

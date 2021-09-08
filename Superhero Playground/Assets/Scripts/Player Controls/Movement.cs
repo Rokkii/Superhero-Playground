@@ -5,9 +5,9 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField]
-    private float playerSpeed;
+    private float playerSpeed = 10f;
 
-    public float sprintBonus;
+    public float sprintBonus = 20f;
 
     private Rigidbody playerBody;
     private Vector3 inputVector;
@@ -28,10 +28,10 @@ public class Movement : MonoBehaviour
         float z = Input.GetAxisRaw("Vertical");
 
         // Calculate input vector based on input values
-        inputVector = (transform.right * x) +  (transform.forward * z);
+        inputVector = transform.right * x +  transform.forward * z ;
 
         // Calculate movement velocity of player
-        playerBody.velocity = inputVector * playerSpeed;
+        playerBody.velocity = inputVector * playerSpeed + Vector3.up * playerBody.velocity.y;
 
         // Player Sprint - if player presses LeftShift, increase player speed by adding sprint bonus, subtract when key released
         if (Input.GetKeyDown(KeyCode.LeftShift))

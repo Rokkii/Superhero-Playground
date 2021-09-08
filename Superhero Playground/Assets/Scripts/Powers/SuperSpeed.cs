@@ -13,12 +13,14 @@ public class SuperSpeed : MonoBehaviour
     // When Script enabled, add superSpeedBonus to sprintBonus from Movement Script
     private void OnEnable()
     {
+        Debug.Log("Super Speed activated...");
         thePlayer.GetComponent<Movement>().sprintBonus += superSpeedBonus;
     }
 
     // When Script enabled, subtract superSpeedBonus from sprintBonus from Movement Script
     private void OnDisable()
     {
+        Debug.Log("Super Speed deactivated...");
         thePlayer.GetComponent<Movement>().sprintBonus -= superSpeedBonus;
     }
 }

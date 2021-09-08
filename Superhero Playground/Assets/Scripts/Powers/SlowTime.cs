@@ -24,11 +24,11 @@ public class SlowTime : MonoBehaviour
     void Update()
     {
         // If player presses return key, either slow down time or return time to normal value
-        if (Input.GetKeyDown("return") & Time.timeScale == 1f)
+        if (Input.GetKeyDown(KeyCode.Return) & Time.timeScale == 1f)
         {
             SlowDownTime();
         }
-        else if (Input.GetKeyDown("return") & Time.timeScale == timeReduction)
+        else if (Input.GetKeyDown(KeyCode.Return) & Time.timeScale == timeReduction)
         {
             ResumeNormalTime();
         }
