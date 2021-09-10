@@ -55,11 +55,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Powers\SlowTime.cs" />
     <Compile Include="Assets\Scripts\Obstacles\MoveToTarget.cs" />
+    <Compile Include="Assets\Scripts\Powers\Teleportation.cs" />
     <Compile Include="Assets\Scripts\Player Controls\Movement.cs" />
     <Compile Include="Assets\Scripts\Player Controls\PlayerLook.cs" />
     <Compile Include="Assets\Scripts\Powers\SuperSpeed.cs" />
     <Compile Include="Assets\Scripts\Powers\Flight.cs" />
-    <Compile Include="Assets\Scripts\Powers\Teleportation.cs" />
+    <Compile Include="Assets\Scripts\Lab Tests\TimedRace.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
