@@ -8,6 +8,7 @@ TagManager:
   - RaceMarker
   - NextRaceMarker
   - RaceTriggerArea
+  - RespawnPoint
   layers:
   - Default
   - TransparentFX

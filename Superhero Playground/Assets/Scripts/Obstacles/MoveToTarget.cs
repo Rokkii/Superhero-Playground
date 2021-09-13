@@ -8,6 +8,9 @@ public class MoveToTarget : MonoBehaviour
     private GameObject[] movementTarget;
 
     [SerializeField]
+    private GameObject respawnPoint;
+
+    [SerializeField]
     private float movementSpeed = 10f;
 
     private int i = 0;
@@ -33,6 +36,13 @@ public class MoveToTarget : MonoBehaviour
                 Debug.Log("Obstacle collided with all targets, resetting");
                 i = 0;
             }
+        }
+
+        // If obstacle collides with player, respawn the player to specified game object position in client
+        if (collision.transform.tag == "Player")
+        {
+            Debug.Log("Player hit obstacle! Respawning...");
+            collision.transform.position = respawnPoint.transform.position;
         }
     }
 }
