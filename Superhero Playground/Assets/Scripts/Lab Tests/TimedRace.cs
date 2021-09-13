@@ -29,7 +29,13 @@ public class TimedRace : MonoBehaviour
     [SerializeField]
     private GameObject nextRaceMarker;
 
-    public int currentMarker = 0;
+    [SerializeField]
+    private List<float> raceTimesList;
+
+    [SerializeField]
+    private GameObject[] bestTimeLeaderboard;
+
+    private int currentMarker = 0;
 
     // On beginning race, display race timer text UI and display timePassed to this text
     private void OnEnable()
@@ -67,6 +73,11 @@ public class TimedRace : MonoBehaviour
             if (currentMarker >= raceTrackMarkers.Length)
             {
                 Debug.Log("Race Complete! Time Taken: " + timePassed);
+
+                // Check if race time was quick enough for leaderboard
+                BestTimeCheck();
+
+                Debug.Log("Leaderboard Checked!");
 
                 // Update finalRaceTimeText to give player the time taken to complete race
                 finalRaceTimeText.GetComponent<Text>().text = timePassed.ToString("0.0");
@@ -125,6 +136,29 @@ public class TimedRace : MonoBehaviour
             // Trigger prompt to start the race if player enters race area
             Debug.Log("Player left race area!");
             raceTriggerPrompt.SetActive(false);
+        }
+    }
+
+    // Check if latest time is a top time - if so add to leaderboard
+    private void BestTimeCheck()
+    {
+        // Add completed race time to list of player times, sort this list based on value
+        raceTimesList.Add(timePassed);
+        raceTimesList.Sort();
+
+        int i = 0;
+
+        // For each topLeader game object set in inspector array - add the times from sorted raceTimeList in order until bestTimeLeaderboard array length matched
+        foreach (GameObject topLeader in bestTimeLeaderboard)
+        {
+            bestTimeLeaderboard[i].GetComponent<Text>().text = raceTimesList[i].ToString("0.0");
+            i++;
+
+            // Break loop if not enough player times to fill leaderboard array
+            if (i == raceTimesList.Count)
+            {
+                break;
+            }
         }
     }
 }
