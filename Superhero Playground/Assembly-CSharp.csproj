@@ -56,12 +56,19 @@
     <Compile Include="Assets\Scripts\Lab Tests\TimedRace.cs" />
     <Compile Include="Assets\Scripts\Powers\SlowTime.cs" />
     <Compile Include="Assets\Scripts\Obstacles\MoveToTarget.cs" />
+    <Compile Include="Assets\Scripts\Player Controls\RespawnPlayer.cs" />
     <Compile Include="Assets\Scripts\Powers\Teleportation.cs" />
     <Compile Include="Assets\Scripts\Player Controls\Movement.cs" />
     <Compile Include="Assets\Scripts\Player Controls\PlayerLook.cs" />
     <Compile Include="Assets\Scripts\Powers\SuperSpeed.cs" />
     <Compile Include="Assets\Scripts\Powers\Flight.cs" />
-    <Compile Include="Assets\Scripts\Player Controls\RespawnPlayer.cs" />
+    <Compile Include="Assets\Imported\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
+    <Compile Include="Assets\Imported\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\Imported\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\Imported\Joystick Pack\Scripts\Base\Joystick.cs" />
+    <Compile Include="Assets\Imported\Joystick Pack\Examples\JoystickPlayerExample.cs" />
+    <Compile Include="Assets\Imported\Joystick Pack\Examples\JoystickSetterExample.cs" />
+    <Compile Include="Assets\Imported\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
